@@ -2,9 +2,12 @@ name: Integracion continua
 
 on:
   push:
-    branches: [ main ]
+    branches:  
+      - main
+     # - 'feature/**' 
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -13,10 +16,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Configuracion JDK 8
+    - name: Configuracion JDK 11
       uses: actions/setup-java@v2
       with:
-        java-version: '8'
+        java-version: '11'
         distribution: 'adopt'
     - name: Cache de paquetes de SonarCloud 
       uses: actions/cache@v1
@@ -36,6 +39,8 @@ jobs:
       run: ./gradlew test
     - name: Compilar con Gradle
       run: ./gradlew build    
+    - name: Analisis de cobertura
+      run: ./gradlew jacocoTestReport
     - name: Analizar con SonarCloud
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
