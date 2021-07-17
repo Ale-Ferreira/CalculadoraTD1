@@ -25,50 +25,46 @@ public class Calculadora {
 			boolean control = true;
 			System.out.println("Esta es una calculadora de consola.\n Si es decimal utiliza comas y no puntos\n\n");
 			while (control) {
-			System.out.println("Selecciona una opción:\n1.Suma\n2.Resta\n3.Multiplicación\n4.División\n5.Salir");
+			System.out.println("Selecciona una opcion:\n1.Suma\n2.Resta\n3.Multiplicacion\n4.Division");
 			opc = sc.nextInt();
 			switch (opc) {
 			case 1:
-			System.out.println("Ingresa el primer número");
+			System.out.println("Ingresa el primer numero");
 			n1 = sc.nextDouble();
-			System.out.println("Ingresa el segundo número");
+			System.out.println("Ingresa el segundo numero");
 			n2 = sc.nextDouble();
 			result = suma(n1,n2);
 			System.out.println(n1+" + "+n2+" = "+result);
 			break;
 			case 2:
-			System.out.println("Ingresa el primer número");
+			System.out.println("Ingresa el primer numero");
 			n1 = sc.nextDouble();
-			System.out.println("Ingresa el segundo número");
+			System.out.println("Ingresa el segundo numero");
 			n2 = sc.nextDouble();
 			result = resta(n1,n2);
 			System.out.println(n1+" - "+n2+" = "+result);
 			break;
 			case 3:
-			System.out.println("Ingresa el primer número");
+			System.out.println("Ingresa el primer numero");
 			n1 = sc.nextDouble();
-			System.out.println("Ingresa el segundo número");
+			System.out.println("Ingresa el segundo numero");
 			n2 = sc.nextDouble();
 			result = multiplica(n1,n2);
 			System.out.println(n1+" * "+n2+" = "+result);
 			break;
 			case 4:
-			System.out.println("Ingresa el primer número");
+			System.out.println("Ingresa el primer numero");
 			n1 = sc.nextInt();
-			System.out.println("Ingresa el segundo número");
+			System.out.println("Ingresa el segundo numero");
 			n2 = sc.nextInt();
 			result = divide(n1,n2);
 			System.out.println(n1+" / "+n2+" = "+result);
 			break;
-			case 5:
-			System.out.println("Gracias por usar la calculadora :)");
-			control = false;
-			break;
 			default:
-			System.out.println("Por favor. Selecciona una opción correcta.");
+			System.out.println("Por favor. Selecciona una opcion correcta.");
 			break;
 			}
-			System.out.println("¿Deseas realizar otra operación?\n1.Si\n2.No");
+			System.out.println("Deseas realizar otra operacion?\n1.Si\n2.No");
 			opc = sc.nextInt();
 			if (opc==2) {
 			control=false;
