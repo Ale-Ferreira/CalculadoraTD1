@@ -27,4 +27,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: CalculadoraTD1-1.0-SNAPSHOT
-        path: /build/libs/CalculadoraTD1-1.0-SNAPSHOT.jar
+        path: ./build/libs/CalculadoraTD1-1.0-SNAPSHOT.jar
