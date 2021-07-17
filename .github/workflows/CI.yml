@@ -38,9 +38,11 @@ jobs:
       run: ./gradlew build    
     - name: Analizar con SonarCloud
       env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: ./gradlew sonarqube --info
     - uses: actions/upload-artifact@v2
       with:
         name: CalculadoraTD1-1.0-SNAPSHOT
         path: ./build/libs/CalculadoraTD1-1.0-SNAPSHOT.jar
+        
