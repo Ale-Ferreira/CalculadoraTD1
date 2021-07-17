@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+apply plugin: 'application'
+
+group 'pruebaTodo1'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+   testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+test {
+    useJUnit()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
+
+jacoco {
+    toolVersion = "0.8.7"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        xml.destination file("${buildDir}/jacocoCoverage/coverage.xml")
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.todo1.calculadora.Calculadora'
+        )
+    }
+}
+
+
+
+
+mainClassName = 'Calculadora'
