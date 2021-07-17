@@ -18,14 +18,12 @@ jobs:
       with:
         java-version: '8'
         distribution: 'adopt'
-
-
     - name: Cache de paquetes de SonarCloud 
-        uses: actions/cache@v1
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
+      uses: actions/cache@v1
+      with:
+        path: ~/.sonar/cache
+        key: ${{ runner.os }}-sonar
+        restore-keys: ${{ runner.os }}-sonar
     - name: Cache de paquetes Gradle 
       uses: actions/cache@v1
       with:
