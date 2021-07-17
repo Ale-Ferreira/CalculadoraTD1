@@ -38,6 +38,8 @@ jobs:
       run: ./gradlew test
     - name: Compilar con Gradle
       run: ./gradlew build    
+    - name: Analisis de cobertura
+      run: ./gradlew jacocoTestReport
     - name: Analizar con SonarCloud
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
